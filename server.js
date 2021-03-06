@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // CUSTOM ROUTES GO HERE
+app.use("/books", require("./routes/book-routes"))
 
 // Send every other request to the React app
 // Define any API routes before this runs
