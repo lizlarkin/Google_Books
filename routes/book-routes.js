@@ -1,13 +1,9 @@
 const router = require('express').Router();
 
 // Get Routes from Controller
-const {test} = require("../controllers/BookControllers")
+const {getAll} = require("../controllers/BookControllers")
 
-// // Test Route
-// router.get("/", (req, res) => {
-//     res.send('this actually works!')
-// })
-
-router.get("/", test)
+// Route to get all books
+router.get("/", getAll)
 
 module.exports = router;
