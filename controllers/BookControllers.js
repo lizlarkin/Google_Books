@@ -25,4 +25,13 @@ module.exports = {
             console.log(error)            
         }
     },
+
+    deleteOneBook: async (req, res) => {
+        try {
+            res.json(await Book.findByIdAndDelete(req.params.id))
+        } catch (error) {
+            res.send(error)
+            console.log(error)            
+        }
+    },
 };
