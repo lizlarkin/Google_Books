@@ -6,11 +6,13 @@ import Home from './Pages/Home';
 import Saved from './Pages/Saved';
 import Search from './Pages/Search';
 import Error from './Pages/Error';
+import Nav from './Components/Nav';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Nav />
         <Switch>
           <Route path = "/Saved" component = {Saved} />
           <Route path = "/Search" component = {Search} />
