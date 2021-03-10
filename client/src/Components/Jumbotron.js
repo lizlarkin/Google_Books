@@ -8,11 +8,11 @@ const Jumbotron = () => {
         height: "300px",
 
         jumboText: {
-            color: "#0097e6",
+            color: "#40739e",
         }
     }
     return (
-        <div class = "col-md-12 jumbotron text-dark bg-light" style={jumboStyles}>
+        <div className = "col-md-12 jumbotron text-dark bg-light" style={jumboStyles}>
             <h2 style={jumboStyles.jumboText}>(React) Google Books Search</h2>
             <h4 style={jumboStyles.jumboText}>Search for and Save Books of Interest</h4>
             <img src={booksPicture} alt="Books on a Shelf"/>
