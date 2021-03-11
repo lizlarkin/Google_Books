@@ -3,6 +3,11 @@ import axios from 'axios'
 
 const Saved = (props) => {
 
+  function reloadPage() {
+    window.location.reload(false);
+  }
+
+
   const bookStyles = {
     btnStyles: {
         marginLeft: "10px",
@@ -22,6 +27,9 @@ const handleDelete = (e) => {
   .then(res => {
     console.log(res)
   })
+  .then(
+    reloadPage()
+  )
   .catch(err => {
     console.log(err)
   })
