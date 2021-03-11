@@ -19,8 +19,6 @@ export default class Search extends Component {
         }
     }
 
-    // Get books from Google Books API
-
     state = {
         search: [],
         title: [],
@@ -70,8 +68,9 @@ export default class Search extends Component {
                 <h4 className="card-title">{this.state.title}</h4>
                 <h5 className="card-title">{this.state.author}</h5>
                 <p className="card-text">{this.state.description}</p>
-                <a href={this.state.infoLink} className="btn btn-success" style={this.bookStyles.btnStyles}>View</a>
-                <a href="#" className="btn btn-primary" style={this.bookStyles.btnStyles}>Save</a>
+                <a href={this.state.infoLink} className="btn btn-outline-success" style={this.bookStyles.btnStyles}>View</a>
+                {/* <a href="#" className="btn btn-primary" style={this.bookStyles.btnStyles}>Save</a> */}
+                <button onClick={(e)=> this.handleSave(e)} className="btn btn-outline-primary" type="button" style={this.bookStyles.btnStyles}>Save</button>
             </div>
         </div>
 
