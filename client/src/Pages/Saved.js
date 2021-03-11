@@ -27,7 +27,6 @@ const handleDelete = (e) => {
   })
 }
 
-
 // let savedBooks;
 
 // const getSaved = ()=>{
@@ -48,13 +47,13 @@ const handleDelete = (e) => {
             <h1>Saved Books</h1> 
             <div className = "container">
             {props.books.map(book => (
-              <div className="card">
-                <img src={book.image} className="card-img-top" alt={book.title} style={bookStyles.imageStyles}/>
+              <div className="card mt-2 mb-2">
+                <img src={book.imageUrl} className="card-img-top" alt={book.title} style={bookStyles.imageStyles}/>
                 <div className="card-body">
                     <h4 className="card-title">{book.title}</h4>
                     <h5 className="card-title">{book.author}</h5>
                     <p className="card-text">{book.description}</p>
-                    <a href={book.infoLink} className="btn btn-outline-secondary" style={bookStyles.btnStyles}>View</a>
+                    <a href={book.link} className="btn btn-outline-secondary" style={bookStyles.btnStyles}>View</a>
                     <button onClick={(e)=> handleDelete(e)} className="btn btn-outline-danger" type="button" style={bookStyles.btnStyles} id={book._id}>Delete</button>
                 </div>
               </div>
