@@ -8,7 +8,7 @@ const {
 
 // Route to get all books
 router.get("/", getAll);
-router.post("/", postBook);
+router.route("/save").post(postBook);
 router.delete("/:id", deleteOneBook);
 
 module.exports = router;

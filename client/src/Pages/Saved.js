@@ -1,6 +1,5 @@
 import React from 'react'
-import axios from "axios";
-import {useEffect, useState} from "react";
+import axios from 'axios'
 
 const Saved = (props) => {
 
@@ -16,6 +15,27 @@ const Saved = (props) => {
         marginTop: "10px",
     }
 }
+
+const handleDelete = (e) => {
+  alert('deleted!')
+  axios.delete("/books/" + e.target.id)
+  .then(res => {
+    console.log(res)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+
+
+// let savedBooks;
+
+// const getSaved = ()=>{
+//   axios.get("/books").then(res=> savedBooks = res)
+//   console.log(savedBooks);
+// }
+
+// getSaved()
 
     // QUESTION FOR FARAN: WHY DOES IT NEED TO COME IN AS PROPS FROM APP
     // VS. AXIOS.GET FROM THIS PAGE AND THIS.STATE TO GET DATA
@@ -35,9 +55,9 @@ const Saved = (props) => {
                     <h5 className="card-title">{book.author}</h5>
                     <p className="card-text">{book.description}</p>
                     <a href={book.infoLink} className="btn btn-outline-secondary" style={bookStyles.btnStyles}>View</a>
-                    <button onClick={(e)=> this.handleSave(e)} className="btn btn-outline-danger" type="button" style={bookStyles.btnStyles}>Delete</button>
+                    <button onClick={(e)=> handleDelete(e)} className="btn btn-outline-danger" type="button" style={bookStyles.btnStyles} id={book._id}>Delete</button>
                 </div>
-</div>
+              </div>
             ))}
         </div>
         </div>
