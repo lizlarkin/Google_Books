@@ -11,8 +11,7 @@ import {useEffect, useState} from "react";
 
 function App() {
 
-  // LEFT ON HERE - get books from back end. Also, try to make footer work
-  
+ 
   const [books, setBooks] = useState([])
     
   useEffect(async () => {

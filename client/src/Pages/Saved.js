@@ -3,11 +3,6 @@ import axios from 'axios'
 
 const Saved = (props) => {
 
-  function reloadPage() {
-    window.location.reload(false);
-  }
-
-
   const bookStyles = {
     btnStyles: {
         marginLeft: "10px",
@@ -21,19 +16,25 @@ const Saved = (props) => {
     }
 }
 
-const handleDelete = (e) => {
-  alert('deleted!')
-  axios.delete("/books/" + e.target.id)
-  .then(res => {
-    console.log(res)
-  })
-  .then(
-    reloadPage()
-  )
-  .catch(err => {
-    console.log(err)
-  })
-}
+
+  // Reload function to run after delete
+  function reloadPage() {
+    window.location.reload(false);
+  }
+
+  const handleDelete = (e) => {
+    alert('Book deleted!')
+    axios.delete("/books/" + e.target.id)
+    .then(res => {
+      console.log(res)
+    })
+    .then(
+      reloadPage()
+    )
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
 // let savedBooks;
 
@@ -55,7 +56,7 @@ const handleDelete = (e) => {
             <h1>Saved Books</h1> 
             <div className = "container">
             {props.books.map(book => (
-              <div className="card mt-2 mb-2">
+              <div className="card mt-2 mb-2" key={book._id}>
                 <img src={book.imageUrl} className="card-img-top" alt={book.title} style={bookStyles.imageStyles}/>
                 <div className="card-body">
                     <h4 className="card-title">{book.title}</h4>

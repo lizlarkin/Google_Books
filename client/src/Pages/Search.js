@@ -49,13 +49,13 @@ export default class Search extends Component {
     }
 
         handleSave = () => {
-            const bookData = {
-                title: this.state.title,
-                authors: this.state.authors,
-                description: this.state.description,
-                imageUrl: this.state.imageUrl,
-                link: this.state.link,
-            }
+            // const bookData = {
+            //     title: this.state.title,
+            //     authors: this.state.authors,
+            //     description: this.state.description,
+            //     imageUrl: this.state.imageUrl,
+            //     link: this.state.link,
+            // }
             // console.log(this.state)
             axios.post("/books/save", this.state).then(res => {
                 // console.log(res)
